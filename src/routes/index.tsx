@@ -9,8 +9,8 @@ type Props = {};
 const Routes: React.FC<Props> = props => {
   return (
     <Router>
-      <PublicRoute page={Home} />
-      <PublicRoute page={Login} />
+      <PublicRoute page={Home} path="/" />
+      <PublicRoute page={Login} path="/login" />
     </Router>
   );
 };
