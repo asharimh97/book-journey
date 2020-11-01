@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 import styled from "styled-components";
 import { border } from "styled-system";
 import { convertNumberToPixel } from "utils/helpers";
@@ -50,14 +51,30 @@ const ImgFit = styled("img")<ImageProp>`
   ${fullRounded}
 `;
 
-const Image: React.FC<ImageProp> = ({ alt, src, autofit, ...props }) => {
-  return autofit ? (
-    <Wrapper {...props}>
-      <ImgFit src={src} alt={alt} {...props} />
-    </Wrapper>
-  ) : (
-    <Img src={src} alt={alt} {...props} />
-  );
+const Image: React.FC<ImageProp> = ({ alt, src = "", autofit, ...props }) => {
+  if (/.svg$/i.test(src))
+    return (
+      <Wrapper {...props}>
+        <ReactSVG
+          src={src}
+          beforeInjection={(svg: Record<string, any>) => {
+            svg.style = "width: 100%; height: auto;";
+          }}
+          fallback={() => <div>Error, image can't be loaded</div>}
+          loading={() => <div>Loading...</div>}
+          wrapper="span"
+        />
+      </Wrapper>
+    );
+
+  if (autofit)
+    return (
+      <Wrapper {...props}>
+        <ImgFit src={src} alt={alt} {...props} />
+      </Wrapper>
+    );
+
+  return <Img src={src} alt={alt} {...props} />;
 };
 
 Image.displayName = "Image";
