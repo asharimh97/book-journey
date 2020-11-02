@@ -48,6 +48,76 @@ const fontWeights: Object = {
   bold
 };
 
+const colors: Record<string, any> = {
+  black: {
+    100: "#25282B",
+    80: "#A0A4A8",
+    60: "#C4C4C4",
+    40: "#CACCCF",
+    20: "#E4E4E4",
+    10: "#E5E5E5",
+    5: "#FAFAFA",
+    primary: "#25282B",
+    seondary: "#A0A4A8"
+  },
+  orange: {
+    100: "#1a0e00",
+    90: "#4d2a00",
+    80: "#804600",
+    70: "#b36200",
+    60: "#e67e00",
+    50: "#ff981a",
+    40: "#ffaf4d",
+    30: "#ffc680",
+    20: "#ffddb3",
+    10: "#fff4e5",
+    primary: "#e67e00",
+    secondary: "#ff981a"
+  },
+  red: {
+    100: "#190002",
+    90: "#4c0107",
+    80: "#7e010b",
+    70: "#b00210",
+    60: "#e30315",
+    50: "#fc1c2e",
+    40: "#fd4f5d", // primary
+    30: "#fe818b",
+    20: "#feb3b9",
+    10: "#ffe6e8",
+    primary: "#fd4f5d",
+    secondary: "#fe818b"
+  },
+  green: {
+    100: "#04160c",
+    90: "#0b4125",
+    80: "#126d3d",
+    70: "#1a9956",
+    60: "#21c46e", // primary
+    50: "#3bde88",
+    40: "#66e5a2",
+    30: "#92edbd",
+    20: "#bef4d7",
+    10: "#e9fbf2",
+    primary: "#21c46e",
+    secondary: "#3bde88"
+  },
+  blue: {
+    100: "#001119",
+    90: "#01344c",
+    80: "#02577e",
+    70: "#027ab0",
+    60: "#039de3",
+    50: "#1cb7fc",
+    40: "#4fc7fd",
+    30: "#81d7fd",
+    20: "#b3e7fe",
+    10: "#e6f7ff",
+    primary: "#039de3",
+    secondary: "#1cb7fc"
+  }
+};
+
 // in this new spacing standard index `0` stands for 0 margin/padding
 const space: Array<Number> = [0, 4, 8, 16, 24, 32, 40, 64, 128, 256, 512];
 
@@ -63,6 +133,7 @@ const shadows: Array<String> = [
 export default {
   bold,
   breakpoints,
+  colors,
   font,
   fontSizes,
   fontWeights,
