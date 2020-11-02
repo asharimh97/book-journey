@@ -27,8 +27,6 @@ export type TextProp = {
 
   tight?: boolean;
   truncate?: boolean;
-
-  [key: string]: any;
 } & TypographyProps &
   ColorProps &
   SpaceProps &
