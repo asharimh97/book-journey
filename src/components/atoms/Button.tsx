@@ -18,6 +18,7 @@ type ButtonProp = BorderProps &
   PositionProps &
   ShadowProps &
   SpaceProps & {
+    theme?: any;
     block?: boolean;
     disabled?: boolean;
     color?: "orange" | "red" | "green" | "blue";
@@ -75,6 +76,7 @@ const Button = styled.button<ButtonProp>`
   color: white;
   cursor: pointer;
   display: flex;
+  font-family: "Proxima Nova Bold", ${props => props.theme.font};
   font-size: 16px;
   font-weight: 700;
   padding-left: 20px;
