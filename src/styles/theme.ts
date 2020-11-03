@@ -19,7 +19,8 @@ const aliases: Array<String> = ["sm", "md", "lg", "xl"];
 
 addAliases(breakpoints, aliases);
 addAliases(mediaQueries, aliases);
-const font: String = "Google Sans, Helvetica, Arial, sans-serif";
+const font: String = `"Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
 
 // this font size scaling follows styled-system standard
 // however we can't change the standard scaling, theme will always return
