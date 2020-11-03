@@ -11,6 +11,7 @@ import {
 } from "styled-system";
 
 export type TextProp = {
+  as?: any;
   theme?: any;
 
   bold?: boolean;
