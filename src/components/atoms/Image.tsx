@@ -2,7 +2,7 @@ import React from "react";
 import { ReactSVG } from "react-svg";
 import styled from "styled-components";
 import { border } from "styled-system";
-import { convertNumberToPixel } from "utils/helpers";
+import { convertNumberToPixel, handleErrorImage } from "utils/helpers";
 import { BaseProp } from "./Base";
 import Box from "./Box";
 
@@ -60,7 +60,7 @@ const Image: React.FC<ImageProp> = ({ alt, src = "", autofit, ...props }) => {
           beforeInjection={(svg: Record<string, any>) => {
             svg.style = "width: 100%; height: auto;";
           }}
-          fallback={() => <div>Error, image can't be loaded</div>}
+          fallback={() => <Image src="/image-placeholder.jpg" {...props} />}
           loading={() => <div>Loading...</div>}
           wrapper="span"
         />
@@ -70,11 +70,11 @@ const Image: React.FC<ImageProp> = ({ alt, src = "", autofit, ...props }) => {
   if (autofit)
     return (
       <Wrapper {...props}>
-        <ImgFit src={src} alt={alt} {...props} />
+        <ImgFit src={src} alt={alt} {...props} onError={handleErrorImage} />
       </Wrapper>
     );
 
-  return <Img src={src} alt={alt} {...props} />;
+  return <Img src={src} alt={alt} {...props} onError={handleErrorImage} />;
 };
 
 Image.displayName = "Image";
