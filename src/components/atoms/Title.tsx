@@ -10,7 +10,16 @@ const titleStyle: Record<string, any> = {
   h5: { fontSize: theme.fontSizes[2] }
 };
 
-const Title = styled(Text)<TextProp>`
+type TitleProp = TextProp & {
+  as?: any;
+  forwardedAs?: any;
+  children?: any;
+  theme?: any;
+  // temporary
+  [key: string]: any;
+};
+
+const Title = styled(Text)<TitleProp>`
   ${props =>
     props.as &&
     css`
@@ -23,7 +32,9 @@ Title.displayName = "Title";
 Title.defaultProps = {
   as: "h1",
   lineHeight: "1.15",
-  my: "1.25em"
+  mt: "1.25em",
+  mb: "1.25em",
+  bold: true
 };
 
 export default Title;

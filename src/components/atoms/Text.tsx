@@ -9,10 +9,11 @@ import {
   typography,
   TypographyProps
 } from "styled-system";
+import theme from "styles/theme";
 
 export type TextProp = {
   as?: any;
-  theme?: any;
+  theme?: typeof theme | any;
 
   bold?: boolean;
   medium?: boolean;
@@ -34,6 +35,8 @@ export type TextProp = {
   LayoutProps;
 
 const bold = css`
+  font-family: ${(props: TextProp) =>
+    props.bold && `"Proxima Nova Bold", ${props.theme.font}`};
   font-weight: ${(props: TextProp) => props.bold && props.theme.bold};
 `;
 
@@ -100,8 +103,6 @@ const Text = styled.p<TextProp>`
 Text.defaultProps = {
   fontSize: 1,
   lineHeight: "1.65",
-  mx: 0,
-  my: 0,
   mb: "1.05em"
 };
 
