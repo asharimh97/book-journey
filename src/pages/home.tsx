@@ -29,12 +29,13 @@ const Home: React.FC<Props> = () => {
             <br />
             <br /> - Sun Tzu, The Art of War
           </Text>
-          <Link to="/book-list" style={{ textDecoration: "none" }}>
+          <Link to="/books" style={{ textDecoration: "none" }}>
             <Button
               color="orange"
               colorType="gradient"
               rounded
               mx={["auto", null, "0px"]}
+              px={6}
             >
               See my journey
             </Button>
