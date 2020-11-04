@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Base from "./Base";
+import Base, { BaseProp } from "./Base";
 
-const Box = styled(Base)``;
+const Box = styled(Base)<BaseProp>``;
 
 Box.displayName = "Box";
 
