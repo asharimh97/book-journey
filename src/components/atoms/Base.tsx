@@ -13,7 +13,9 @@ import {
   shadow,
   ShadowProps,
   space,
-  SpaceProps
+  SpaceProps,
+  typography,
+  TypographyProps
 } from "styled-system";
 
 export type BaseProp = SpaceProps &
@@ -22,7 +24,8 @@ export type BaseProp = SpaceProps &
   ColorProps &
   BackgroundProps &
   PositionProps &
-  ShadowProps;
+  ShadowProps &
+  TypographyProps;
 
 const Base = styled.div<BaseProp>`
   ${background}
@@ -32,6 +35,7 @@ const Base = styled.div<BaseProp>`
   ${position}
   ${shadow}
   ${space}
+  ${typography}
 `;
 
 Base.displayName = "Base";
