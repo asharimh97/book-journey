@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { flex, FlexProps } from "styled-system";
+import { flexbox, FlexboxProps } from "styled-system";
 import Base, { BaseProp } from "./Base";
 
-type FlexProp = BaseProp & FlexProps;
+type FlexProp = BaseProp & FlexboxProps;
 
 const Flex = styled(Base)<FlexProp>`
   display: flex;
-  ${flex}
+  ${flexbox}
 `;
 
 Flex.displayName = "Flex";
