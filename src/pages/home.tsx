@@ -20,7 +20,7 @@ const Home: React.FC<Props> = () => {
           textAlign={["center", null, "left"]}
           pb={[5, null, "0px"]}
         >
-          <Title as="h3" mt={3}>
+          <Title as="h2" mt={3}>
             Reading is a journey
           </Title>
           <Text color="black.secondary" mb={7}>
