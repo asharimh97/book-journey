@@ -11,9 +11,11 @@ import Routes from "routes";
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <ThemeProvider theme={theme}>
-        <Routes />
-      </ThemeProvider>
+      <React.Suspense fallback={<div>loading...</div>}>
+        <ThemeProvider theme={theme}>
+          <Routes />
+        </ThemeProvider>
+      </React.Suspense>
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById("root")
