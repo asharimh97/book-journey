@@ -12,7 +12,7 @@ const Routes: React.FC = () => {
       <PublicRoute page={Home} path="/" />
       <PublicRoute page={Login} path="/login" />
       <PublicRoute page={BookList} path="/books" />
-      <PublicRoute page={BookDetail} path="/book/:slug" />
+      <PublicRoute page={BookDetail} path="/book/:id" />
     </Router>
   );
 };
