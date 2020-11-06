@@ -8,7 +8,7 @@ type Props = {
 
 const PageHeading: React.FC<Props> = ({ title, subtitle }) => {
   return (
-    <Box mt={4} mb={[4, null, 5, 6]}>
+    <Box mt={[4, null, 2, 0]} mb={[4, null, 5, 6]}>
       <Text color="black.secondary" fontSize={0} tight>
         {subtitle}
       </Text>
