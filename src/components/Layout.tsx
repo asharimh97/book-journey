@@ -12,7 +12,7 @@ const Layout: React.FC<Prop> = ({ children, title, ...props }) => {
   return (
     <>
       <Helmet>
-        <title>{title && `${title} - `}Book Journey</title>
+        <title>{title ? `${title} - ` : ""}Book Journey</title>
       </Helmet>
       <Navbar />
       <Container
