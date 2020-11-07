@@ -15,8 +15,7 @@ export const booksQuery = selector({
     snapshot.forEach(book => {
       const bookData = {
         ...book.data(),
-        id: book.id,
-        read_at: book.data().read_at.seconds
+        id: book.id
       };
       res.push(bookData);
     });
