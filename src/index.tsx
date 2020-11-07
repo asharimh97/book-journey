@@ -7,11 +7,12 @@ import theme from "styles/theme";
 import { RecoilRoot } from "recoil";
 
 import Routes from "routes";
+import Layout from "components/Layout";
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <React.Suspense fallback={<div>loading...</div>}>
+      <React.Suspense fallback={<Layout />}>
         <ThemeProvider theme={theme}>
           <Routes />
         </ThemeProvider>
