@@ -52,14 +52,14 @@ const fontWeights: Object = {
 const colors: Record<string, Record<string, string>> = {
   black: {
     100: "#25282B",
-    80: "#A0A4A8",
+    80: "#8e8e93",
     60: "#C4C4C4",
     40: "#CACCCF",
     20: "#E4E4E4",
     10: "#E5E5E5",
     5: "#FAFAFA",
     primary: "#25282B",
-    secondary: "#A0A4A8"
+    secondary: "#8e8e93"
   },
   orange: {
     100: "#1a0e00",
