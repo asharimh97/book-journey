@@ -34,6 +34,7 @@ const BookList: React.FC = () => {
         {books.map(book => (
           <BookCard
             data-testid="book-item"
+            key={book.id}
             book={book}
             minWidth={136}
             maxWidth={158}
