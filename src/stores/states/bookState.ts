@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
 export const booksState = atom({
-  key: "bookState",
+  key: "booksState",
   default: []
 });
