@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import styled, { css } from "styled-components";
 import {
   border,
