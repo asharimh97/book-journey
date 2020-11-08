@@ -7,16 +7,13 @@ import theme from "styles/theme";
 import { RecoilRoot } from "recoil";
 
 import Routes from "routes";
-import Layout from "components/Layout";
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <React.Suspense fallback={<Layout />}>
-        <ThemeProvider theme={theme}>
-          <Routes />
-        </ThemeProvider>
-      </React.Suspense>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById("root")
