@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable prefer-destructuring */
 const createMediaQuery = (n: String) => `@media screen and (min-width:${n})`;
 

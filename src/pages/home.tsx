@@ -1,5 +1,5 @@
 import { Link } from "@reach/router";
-import { Box, Button, Card, Flex, Image, Text, Title } from "components/atoms";
+import { Box, Button, Flex, Image, Text, Title } from "components/atoms";
 import Layout from "components/Layout";
 import React from "react";
 
