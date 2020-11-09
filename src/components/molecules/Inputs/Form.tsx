@@ -9,7 +9,7 @@ type Props = {
 
 const Form: React.FC<Props> = ({ defaultValues, children, onSubmit }) => {
   const methods = useForm({ defaultValues });
-  const { handleSubmit } = methods;
+  const { handleSubmit, errors } = methods;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -18,6 +18,7 @@ const Form: React.FC<Props> = ({ defaultValues, children, onSubmit }) => {
           ? React.createElement(child?.type, {
               ...{
                 ...child?.props,
+                errors,
                 register: methods.register,
                 key: child?.props?.name
               }

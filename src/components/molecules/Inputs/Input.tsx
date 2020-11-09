@@ -1,4 +1,4 @@
-import { Box } from "components/atoms";
+import { Box, Text } from "components/atoms";
 import React from "react";
 import styled from "styled-components";
 import { width } from "styled-system";
@@ -8,6 +8,7 @@ import Label from "./Label";
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   register?: any;
+  errors?: Record<string, any>;
   [key: string]: any;
 };
 
@@ -24,11 +25,12 @@ const InputText = styled.input`
 `;
 
 const Input: React.FC<Props> = ({
-  name,
+  name = "",
   label,
   id,
   placeholder,
   register,
+  errors,
   type,
   ...props
 }) => {
@@ -42,6 +44,11 @@ const Input: React.FC<Props> = ({
         type={type}
         ref={register}
       />
+      {errors?.[name] && (
+        <Text fontSize={0} color="red.primary">
+          {errors?.[name]?.message}
+        </Text>
+      )}
     </Box>
   );
 };
