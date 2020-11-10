@@ -1,7 +1,12 @@
+import Layout from "components/Layout";
 import React from "react";
 
 const AddBook: React.FC = () => {
-  return <div>Ini page add book</div>;
+  return (
+    <Layout title="Add Book">
+      <div>Ini halaman add book</div>
+    </Layout>
+  );
 };
 
 export default AddBook;
