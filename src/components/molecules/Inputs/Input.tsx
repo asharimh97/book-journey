@@ -1,3 +1,4 @@
+import { themeGet } from "@styled-system/theme-get";
 import { Box, Text } from "components/atoms";
 import React from "react";
 import styled from "styled-components";
@@ -15,8 +16,9 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 const InputText = styled.input`
   align-items: center;
   border: solid 1px ${theme.colors.black[20]};
-  border-radius: 12px;
+  border-radius: 8px;
   display: flex;
+  font-family: ${themeGet("font")};
   height: 40px;
   padding: 8px 12px;
   width: 100%;
@@ -27,7 +29,6 @@ const InputText = styled.input`
 const Input: React.FC<Props> = ({
   name = "",
   label,
-  id,
   placeholder,
   register,
   errors,
@@ -39,7 +40,7 @@ const Input: React.FC<Props> = ({
       {label && <Label htmlFor={name}>{label}</Label>}
       <InputText
         name={name}
-        id={id}
+        id={name}
         placeholder={placeholder}
         type={type}
         ref={register}
@@ -54,7 +55,8 @@ const Input: React.FC<Props> = ({
 };
 
 Input.defaultProps = {
-  type: "text"
+  type: "text",
+  mb: 2
 };
 
 export default Input;
