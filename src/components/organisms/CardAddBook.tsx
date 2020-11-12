@@ -2,6 +2,7 @@ import { themeGet } from "@styled-system/theme-get";
 import { Button, Card, Text, Title } from "components/atoms";
 import Form from "components/molecules/Inputs/Form";
 import Input from "components/molecules/Inputs/Input";
+import InputImage from "components/molecules/Inputs/InputImage";
 import Textarea from "components/molecules/Inputs/Textarea";
 import React from "react";
 import styled from "styled-components";
@@ -19,6 +20,7 @@ const CardWrapper = styled(Card)`
   ${themeGet("mediaQueries.md")} {
     border-color: ${themeGet("colors.black.20")};
     margin: auto;
+    margin-bottom: 48px;
     max-width: 375px;
   }
 `;
@@ -35,6 +37,7 @@ const CardAddBook: React.FC<Props> = ({ onSubmit }) => {
         <Input name="author" label="Author" />
         <Input name="read_at" label="Date finished read" type="date" />
         <Textarea name="review" label="My review" />
+        <InputImage name="cover" label="Cover" />
         <Button
           type="submit"
           color="orange"
