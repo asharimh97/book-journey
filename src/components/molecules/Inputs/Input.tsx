@@ -15,6 +15,7 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 
 const InputText = styled.input`
   align-items: center;
+  background: white;
   border: solid 1px ${theme.colors.black[20]};
   border-radius: 8px;
   display: flex;
