@@ -40,6 +40,7 @@ const Textarea: React.FC<Props> = ({
         name={name}
         id={name}
         placeholder={placeholder}
+        ref={register}
       ></StyledTextarea>
     </Box>
   );
