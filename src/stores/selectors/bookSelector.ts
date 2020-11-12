@@ -8,7 +8,7 @@ export const booksQuery = selector({
     const res: Array<any> = get(booksState);
 
     const bookRef = db.collection("books");
-    const snapshot = await bookRef.get();
+    const snapshot = await bookRef.orderBy("read_at", "desc").get();
 
     if (snapshot.empty) return res;
 
