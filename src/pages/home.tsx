@@ -2,10 +2,15 @@ import { Link } from "@reach/router";
 import { Box, Button, Flex, Image, Text, Title } from "components/atoms";
 import Layout from "components/Layout";
 import React from "react";
+import { QUOTES } from "utils/constants";
+import { generateRandomNumber } from "utils/helpers";
 
 type Props = {};
 
 const Home: React.FC<Props> = () => {
+  const quotesIndex = generateRandomNumber(QUOTES.length);
+  const selectedQuotes = QUOTES[quotesIndex % QUOTES.length];
+
   return (
     <Layout>
       <Flex
@@ -24,10 +29,9 @@ const Home: React.FC<Props> = () => {
             Reading is a journey
           </Title>
           <Text color="black.secondary" mb={7}>
-            “So long as victory can be attained, stupid haste is preferable to
-            clever dilatoriness.”
+            “{selectedQuotes?.quotes}”
             <br />
-            <br /> - Sun Tzu, The Art of War
+            <br /> - {selectedQuotes?.author}, {selectedQuotes?.title}
           </Text>
           <Link to="/books" style={{ textDecoration: "none" }}>
             <Button
