@@ -7,12 +7,15 @@ import theme from "styles/theme";
 import { RecoilRoot } from "recoil";
 
 import Routes from "routes";
+import { ToastProvider } from "react-toast-notifications";
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
       <ThemeProvider theme={theme}>
-        <Routes />
+        <ToastProvider>
+          <Routes />
+        </ToastProvider>
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
