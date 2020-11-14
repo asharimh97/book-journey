@@ -13,8 +13,8 @@ export const useProtectedRoute = () => {
       navigate("/login", { replace: true });
     }
 
-    if (!cookie) {
-      setCookie(APP_COOKIE, token || "");
+    if (token && !cookie) {
+      setCookie(APP_COOKIE, token);
     }
   };
 
