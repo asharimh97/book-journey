@@ -7,10 +7,10 @@ export const usePublicRestrictedRoute = () => {
   const { currentUser } = auth();
 
   const checkUserSignedIn = async () => {
-    const token = await currentUser?.getIdToken(false);
+    await currentUser?.getIdToken(false);
     const cookie = getCookie(APP_COOKIE);
 
-    if (token || cookie) {
+    if (cookie) {
       navigate("/add-book");
     }
   };
