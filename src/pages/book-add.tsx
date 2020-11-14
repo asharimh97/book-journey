@@ -1,9 +1,12 @@
 import Layout from "components/Layout";
 import CardAddBook from "components/organisms/CardAddBook";
 import React from "react";
+import { useToasts } from "react-toast-notifications";
 import { db, storage } from "service/firebase";
 
 const AddBook: React.FC = () => {
+  const { addToast } = useToasts();
+
   const handleUploadCover = async (image: File) => {
     const storageRef = storage().ref();
 
@@ -34,7 +37,10 @@ const AddBook: React.FC = () => {
     // reset form if success
     if (addBook.id) {
       e.target.reset();
-      alert("Success add new book!");
+      addToast("Success add new book!", {
+        appearance: "success",
+        autoDismiss: true
+      });
     }
   };
 
