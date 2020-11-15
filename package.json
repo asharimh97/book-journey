@@ -1,6 +1,11 @@
 {
   "name": "book-journey",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": {
+    "name": "Ashari Muhammad Hisbulloh",
+    "email": "asharimh97@gmail.com",
+    "url": "https://iamashari.space"
+  },
   "private": true,
   "dependencies": {
     "@reach/router": "^1.3.4",
