@@ -1,11 +1,14 @@
 import { Grid } from "components/atoms";
 import BookCard from "components/molecules/BookCard";
+import EmptyMessage from "components/molecules/EmptyMessage";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { booksQuery } from "stores/selectors";
 
 const BookReviewList: React.FC = () => {
   const books = useRecoilValue(booksQuery);
+
+  if (books.length === 0) return <EmptyMessage />;
 
   return (
     <Grid
