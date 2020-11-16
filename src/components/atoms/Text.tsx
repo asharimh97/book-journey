@@ -6,6 +6,7 @@ import {
   LayoutProps,
   space,
   SpaceProps,
+  system,
   typography,
   TypographyProps
 } from "styled-system";
@@ -29,10 +30,23 @@ export type TextProp = {
 
   tight?: boolean;
   truncate?: boolean;
+
+  weight?: string | number | Array<any>;
+  align?: string | Array<any>;
+  family?: string | Array<any>;
+  spacing?: string | number | Array<any>;
 } & TypographyProps &
   ColorProps &
   SpaceProps &
   LayoutProps;
+
+// Custom key prop / aliasing a prop
+const textConfig: Record<string, any> = {
+  weight: { property: "fontWeight" },
+  align: { property: "textAlign" },
+  family: { property: "fontFamily" },
+  spacing: { property: "letterSpacing" }
+};
 
 const bold = css`
   font-family: ${(props: TextProp) =>
@@ -98,6 +112,8 @@ const Text = styled.p<TextProp>`
 
   ${truncate};
   ${tight};
+
+  ${system(textConfig)};
 `;
 
 Text.defaultProps = {
