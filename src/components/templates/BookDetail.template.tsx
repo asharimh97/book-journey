@@ -5,8 +5,8 @@ import Skeleton from "react-loading-skeleton";
 const BookDetailTemplate: React.FC = () => {
   return (
     <Flex
-      justifyContent={["flex-start", null, "space-between"]}
-      flexDirection={["column", null, "row-reverse"]}
+      justify={["flex-start", null, "space-between"]}
+      direction={["column", null, "row-reverse"]}
     >
       <Box
         width={["100%", null, 215]}

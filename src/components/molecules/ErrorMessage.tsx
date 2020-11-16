@@ -9,7 +9,7 @@ type Props = {
 const ErrorMessage: React.FC<Props> = ({ code, message }) => {
   return (
     <Flex
-      alignItems="center"
+      align="center"
       position="absolute"
       top="50%"
       left="50%"

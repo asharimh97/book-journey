@@ -23,8 +23,8 @@ const BookReviewDetail: React.FC<Props> = props => {
     <>
       <SEO title={bookDetail?.title} />
       <Flex
-        justifyContent={["flex-start", null, "space-between"]}
-        flexDirection={["column", null, "row-reverse"]}
+        justify={["flex-start", null, "space-between"]}
+        direction={["column", null, "row-reverse"]}
         mx={[-4, null, null, "0px"]}
       >
         <BookCover book={bookDetail} />
