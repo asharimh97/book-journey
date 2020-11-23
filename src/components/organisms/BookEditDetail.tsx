@@ -57,6 +57,7 @@ const BookEditDetail: React.FC<Props> = ({ ...props }) => {
         });
 
         // redirect
+        // TODO: Get data again after redirect to page book detail
         navigate(`/book/${id}`);
       })
       .catch(err => {
@@ -90,6 +91,9 @@ const BookEditDetail: React.FC<Props> = ({ ...props }) => {
           rounded
           mb={3}
         />
+        {
+          // TODO: Edit input image
+        }
         {/* <InputImage name="cover" label="Cover" /> */}
         <Button
           type="submit"
