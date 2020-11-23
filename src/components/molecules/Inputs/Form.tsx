@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 type Props = {
@@ -7,9 +7,15 @@ type Props = {
   onSubmit: any;
 };
 
-const Form: React.FC<Props> = ({ defaultValues, children, onSubmit }) => {
+const Form: React.FC<Props> = ({ defaultValues = {}, children, onSubmit }) => {
   const methods = useForm({ defaultValues });
-  const { handleSubmit, errors } = methods;
+  const { handleSubmit, errors, reset } = methods;
+
+  useEffect(() => {
+    if (defaultValues && Object.keys(defaultValues).length > 0) {
+      reset(defaultValues);
+    }
+  }, [defaultValues, reset]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
