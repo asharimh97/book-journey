@@ -1,6 +1,7 @@
 import { Router } from "@reach/router";
 import AddBook from "pages/book-add";
 import BookDetail from "pages/book-detail";
+import EditBook from "pages/book-edit";
 import BookList from "pages/book-list";
 import Home from "pages/home";
 import Login from "pages/login";
@@ -20,6 +21,8 @@ const Routes: React.FC = () => {
       <PublicRoute page={Logout} path="/logout" />
 
       <PrivateRoute page={AddBook} path="/add-book" />
+      <PrivateRoute page={AddBook} path="/add" />
+      <PrivateRoute page={EditBook} path="/edit/:id" />
 
       <PublicRoute page={ErrorPage} default />
     </Router>
