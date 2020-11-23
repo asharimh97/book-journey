@@ -29,7 +29,9 @@ const AddBook: React.FC = () => {
       ...rest
     };
 
-    data.cover = await handleUploadCover(cover[0]);
+    if (cover?.length > 0) {
+      data.cover = await handleUploadCover(cover[0]);
+    }
 
     // add book cover to firebase storage
     const addBook = await db.collection("books").add(data);
