@@ -14,6 +14,19 @@ import {
 } from "styled-system";
 import theme from "styles/theme";
 
+const buttonSizes = {
+  small: { height: "36px" },
+  medium: { height: "42px" },
+  big: { height: "56px" }
+};
+
+const colors = ["orange", "red", "green", "blue"] as const;
+const colorTypes = ["solid", "gradient"] as const;
+
+type ButtonSizes = keyof typeof buttonSizes;
+
+type ButtonColors = typeof colors[number];
+
 type ButtonProp = BorderProps &
   LayoutProps &
   PositionProps &
@@ -22,20 +35,20 @@ type ButtonProp = BorderProps &
     theme?: any;
     block?: boolean;
     disabled?: boolean;
-    color?: "orange" | "red" | "green" | "blue";
-    colorType?: "solid" | "gradient";
+    color?: ButtonColors;
+    colorType?: typeof colorTypes[number];
     rounded?: boolean;
-    size?: "small" | "medium" | "big";
+    size?: ButtonSizes;
     // [key: string]: any;
   };
 
-const buttonSizes: Record<string, any> = {
-  small: { height: "36px" },
-  medium: { height: "42px" },
-  big: { height: "56px" }
+type ButtonStyle = {
+  [P in typeof colorTypes[number]]: {
+    [Q in ButtonColors]: Record<string, any>;
+  };
 };
 
-const buttonStyles: Record<string, any> = {
+const buttonStyles: ButtonStyle = {
   solid: {
     red: { background: theme.colors.red.primary },
     orange: { background: theme.colors.orange.primary },
@@ -83,7 +96,7 @@ const Button = styled.button<ButtonProp>`
   padding-left: 20px;
   padding-right: 20px;
 
-  ${props => props.size && buttonSizes[props.size]};
+  ${({ size }) => size && buttonSizes[size as ButtonSizes]};
 
   ${props =>
     props.color && buttonStyles[props.colorType || "solid"][props.color]};
