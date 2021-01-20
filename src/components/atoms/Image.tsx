@@ -20,9 +20,9 @@ type ImageProp = BaseProp &
 const rounded = (props: ImageProp) =>
   props.rounded && { borderRadius: ROUND_RADIUS };
 
-const fullRounded = (props: ImageProp) =>
-  props.fullRounded && {
-    borderRadius: `calc(${convertNumberToPixel(props.height)} / 2)`
+const fullRounded = ({ fullRounded, height }: ImageProp) =>
+  fullRounded && {
+    borderRadius: `calc(${convertNumberToPixel(height as number)} / 2)`
   };
 
 const Img = styled(Box).attrs<ImageProp>({
