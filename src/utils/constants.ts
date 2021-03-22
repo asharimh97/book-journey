@@ -1,3 +1,4 @@
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const QUOTES = [
   {
     quotes: `So long as victory can be attained, stupid haste is preferable to
