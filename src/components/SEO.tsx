@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BASE_URL } from "utils/constants";
 
 type Props = {
   title?: string;
@@ -11,7 +10,6 @@ type Props = {
 };
 
 const SEO: React.FC<Props> = ({ title, description, image, url, ...props }) => {
-  console.log(BASE_URL);
   return (
     <Helmet>
       <title>{title ? `${title} - ` : ""}Book Journey</title>
