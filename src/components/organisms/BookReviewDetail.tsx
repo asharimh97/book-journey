@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { bookDetailState } from "stores/selectors";
 import { bookDetailId } from "stores/states";
+import { BASE_URL } from "utils/constants";
 
 type Props = {};
 
@@ -21,7 +22,11 @@ const BookReviewDetail: React.FC<Props> = props => {
 
   return (
     <>
-      <SEO title={bookDetail?.title} />
+      <SEO
+        title={`${bookDetail?.title} by ${bookDetail?.author}`}
+        image={bookDetail?.cover}
+        url={`${BASE_URL}/book/${id}`}
+      />
       <Flex
         justify={["flex-start", null, "space-between"]}
         direction={["column", null, "row-reverse"]}
