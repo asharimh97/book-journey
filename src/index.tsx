@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-snapshot";
 import "./styles/app.css";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "styled-components";
@@ -9,7 +9,7 @@ import { RecoilRoot } from "recoil";
 import Routes from "routes";
 import { ToastProvider } from "react-toast-notifications";
 
-ReactDOM.render(
+render(
   <React.StrictMode>
     <RecoilRoot>
       <ThemeProvider theme={theme}>
