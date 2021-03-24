@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "react-snapshot";
+import { render, hydrate } from "react-dom";
+// import { render } from "react-snapshot";
 import "./styles/app.css";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "styled-components";
@@ -9,7 +10,7 @@ import { RecoilRoot } from "recoil";
 import Routes from "routes";
 import { ToastProvider } from "react-toast-notifications";
 
-render(
+const App = (
   <React.StrictMode>
     <RecoilRoot>
       <ThemeProvider theme={theme}>
@@ -18,9 +19,17 @@ render(
         </ToastProvider>
       </ThemeProvider>
     </RecoilRoot>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
+
+const rootElement = document.getElementById("root");
+
+// @ts-ignore
+// if (rootElement.hasChildNodes()) {
+//   hydrate(App, rootElement);
+// } else {
+render(App, rootElement);
+// }
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
