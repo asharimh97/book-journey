@@ -39,7 +39,7 @@ const BookReviewList: React.FC = () => {
 
     return years.map(year => {
       return (
-        <section>
+        <section key={year}>
           <Text bold fontSize={4}>
             {year}
           </Text>
